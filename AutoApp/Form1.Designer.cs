@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
@@ -133,131 +134,92 @@
             this.timer70 = new System.Windows.Forms.Timer(this.components);
             this.timer71 = new System.Windows.Forms.Timer(this.components);
             this.timer72 = new System.Windows.Forms.Timer(this.components);
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // checkBox1
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(22, 29);
+            resources.ApplyResources(this.checkBox1, "checkBox1");
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(125, 21);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "Mixing to Motor";
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // checkBox2
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(22, 56);
+            resources.ApplyResources(this.checkBox2, "checkBox2");
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(141, 21);
-            this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "Motor to Cleaning";
             this.checkBox2.UseVisualStyleBackColor = true;
             this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
             // checkBox3
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(22, 83);
+            resources.ApplyResources(this.checkBox3, "checkBox3");
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(141, 21);
-            this.checkBox3.TabIndex = 2;
-            this.checkBox3.Text = "Cleaning to Motor";
             this.checkBox3.UseVisualStyleBackColor = true;
             this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             // 
             // checkBox4
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(22, 110);
+            resources.ApplyResources(this.checkBox4, "checkBox4");
             this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(146, 21);
-            this.checkBox4.TabIndex = 3;
-            this.checkBox4.Text = "Motor to Recovery";
             this.checkBox4.UseVisualStyleBackColor = true;
             this.checkBox4.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
             // 
             // checkBox5
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(22, 137);
+            resources.ApplyResources(this.checkBox5, "checkBox5");
             this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(146, 21);
-            this.checkBox5.TabIndex = 4;
-            this.checkBox5.Text = "Recovery to Motor";
             this.checkBox5.UseVisualStyleBackColor = true;
             this.checkBox5.CheckedChanged += new System.EventHandler(this.checkBox5_CheckedChanged);
             // 
             // checkBox6
             // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(22, 164);
+            resources.ApplyResources(this.checkBox6, "checkBox6");
             this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(125, 21);
-            this.checkBox6.TabIndex = 5;
-            this.checkBox6.Text = "Motor to Mixing";
             this.checkBox6.UseVisualStyleBackColor = true;
             this.checkBox6.CheckedChanged += new System.EventHandler(this.checkBox6_CheckedChanged);
             // 
             // checkBox7
             // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(17, 25);
+            resources.ApplyResources(this.checkBox7, "checkBox7");
             this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(57, 21);
-            this.checkBox7.TabIndex = 6;
-            this.checkBox7.Text = "VFD";
             this.checkBox7.UseVisualStyleBackColor = true;
             this.checkBox7.CheckedChanged += new System.EventHandler(this.checkBox7_CheckedChanged);
             // 
             // checkBox8
             // 
-            this.checkBox8.AutoSize = true;
-            this.checkBox8.Location = new System.Drawing.Point(17, 26);
+            resources.ApplyResources(this.checkBox8, "checkBox8");
             this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(93, 21);
-            this.checkBox8.TabIndex = 7;
-            this.checkBox8.Text = "Ultrasonic";
             this.checkBox8.UseVisualStyleBackColor = true;
             this.checkBox8.CheckedChanged += new System.EventHandler(this.checkBox8_CheckedChanged);
             // 
             // checkBox9
             // 
-            this.checkBox9.AutoSize = true;
-            this.checkBox9.Location = new System.Drawing.Point(17, 56);
+            resources.ApplyResources(this.checkBox9, "checkBox9");
             this.checkBox9.Name = "checkBox9";
-            this.checkBox9.Size = new System.Drawing.Size(141, 21);
-            this.checkBox9.TabIndex = 8;
-            this.checkBox9.Text = "Immersion Heater";
             this.checkBox9.UseVisualStyleBackColor = true;
             this.checkBox9.CheckedChanged += new System.EventHandler(this.checkBox9_CheckedChanged);
             // 
             // checkBox10
             // 
-            this.checkBox10.AutoSize = true;
-            this.checkBox10.Location = new System.Drawing.Point(17, 26);
+            resources.ApplyResources(this.checkBox10, "checkBox10");
             this.checkBox10.Name = "checkBox10";
-            this.checkBox10.Size = new System.Drawing.Size(72, 21);
-            this.checkBox10.TabIndex = 9;
-            this.checkBox10.Text = "Ozone";
             this.checkBox10.UseVisualStyleBackColor = true;
             this.checkBox10.CheckedChanged += new System.EventHandler(this.checkBox10_CheckedChanged);
             // 
             // checkBox11
             // 
-            this.checkBox11.AutoSize = true;
-            this.checkBox11.Location = new System.Drawing.Point(17, 58);
+            resources.ApplyResources(this.checkBox11, "checkBox11");
             this.checkBox11.Name = "checkBox11";
-            this.checkBox11.Size = new System.Drawing.Size(84, 21);
-            this.checkBox11.TabIndex = 10;
-            this.checkBox11.Text = "UV Light";
             this.checkBox11.UseVisualStyleBackColor = true;
             this.checkBox11.CheckedChanged += new System.EventHandler(this.checkBox11_CheckedChanged);
             // 
@@ -275,87 +237,53 @@
             this.groupBox1.Controls.Add(this.checkBox4);
             this.groupBox1.Controls.Add(this.checkBox5);
             this.groupBox1.Controls.Add(this.checkBox6);
-            this.groupBox1.Location = new System.Drawing.Point(12, 118);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(280, 205);
-            this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Valves";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(187, 30);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 17);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "CLOSED";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(187, 57);
+            resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 17);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "CLOSED";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(187, 84);
+            resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 17);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "CLOSED";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(187, 111);
+            resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 17);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "CLOSED";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(187, 138);
+            resources.ApplyResources(this.label5, "label5");
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 17);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "CLOSED";
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(187, 165);
+            resources.ApplyResources(this.label6, "label6");
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(64, 17);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "CLOSED";
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.checkBox7);
-            this.groupBox2.Location = new System.Drawing.Point(298, 12);
+            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(221, 57);
-            this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "VFD";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(93, 26);
+            resources.ApplyResources(this.label7, "label7");
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 17);
-            this.label7.TabIndex = 16;
-            this.label7.Text = "OFF";
             // 
             // groupBox3
             // 
@@ -363,30 +291,19 @@
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.checkBox8);
             this.groupBox3.Controls.Add(this.checkBox9);
-            this.groupBox3.Location = new System.Drawing.Point(298, 75);
+            resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(221, 93);
-            this.groupBox3.TabIndex = 13;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Cleaning Tank";
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(164, 27);
+            resources.ApplyResources(this.label8, "label8");
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 17);
-            this.label8.TabIndex = 19;
-            this.label8.Text = "OFF";
             // 
             // label9
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(164, 57);
+            resources.ApplyResources(this.label9, "label9");
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(35, 17);
-            this.label9.TabIndex = 20;
-            this.label9.Text = "OFF";
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // groupBox4
@@ -395,152 +312,126 @@
             this.groupBox4.Controls.Add(this.label11);
             this.groupBox4.Controls.Add(this.checkBox10);
             this.groupBox4.Controls.Add(this.checkBox11);
-            this.groupBox4.Location = new System.Drawing.Point(298, 174);
+            resources.ApplyResources(this.groupBox4, "groupBox4");
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(221, 89);
-            this.groupBox4.TabIndex = 14;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Recovery Tank";
             // 
             // label10
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(124, 27);
+            resources.ApplyResources(this.label10, "label10");
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(35, 17);
-            this.label10.TabIndex = 21;
-            this.label10.Text = "OFF";
             // 
             // label11
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(123, 59);
+            resources.ApplyResources(this.label11, "label11");
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(35, 17);
-            this.label11.TabIndex = 22;
-            this.label11.Text = "OFF";
             // 
             // comboBox1
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "Select desired Experiment",
-            "Experiment 1",
-            "Experiment 2",
-            "Experiment 3",
-            "Experiment 4",
-            "Experiment 5",
-            "Experiment 6",
-            "Experiment 7",
-            "Experiment 8",
-            "Experiment 9",
-            "Experiment 10",
-            "Experiment 11",
-            "Experiment 12",
-            "Experiment 13",
-            "Experiment 14",
-            "Experiment 15",
-            "Experiment 16",
-            "Experiment 17",
-            "Experiment 18",
-            "Experiment 19",
-            "Experiment 20",
-            "Experiment 21",
-            "Experiment 22",
-            "Experiment 23",
-            "Experiment 24",
-            "Experiment 25",
-            "Experiment 26",
-            "Experiment 27",
-            "Experiment 28",
-            "Experiment 29",
-            "Experiment 30",
-            "Experiment 31",
-            "Experiment 32",
-            "Experiment 33",
-            "Experiment 34",
-            "Experiment 35",
-            "Experiment 36",
-            "Experiment 37",
-            "Experiment 38",
-            "Experiment 39",
-            "Experiment 40",
-            "Experiment 41",
-            "Experiment 42",
-            "Experiment 43",
-            "Experiment 44",
-            "Experiment 45",
-            "Experiment 46",
-            "Experiment 47",
-            "Experiment 48",
-            "Experiment 49",
-            "Experiment 50",
-            "Experiment 51",
-            "Experiment 52",
-            "Experiment 53",
-            "Experiment 54",
-            "Experiment 55",
-            "Experiment 56",
-            "Experiment 57",
-            "Experiment 58",
-            "Experiment 59",
-            "Experiment 60",
-            "Experiment 61",
-            "Experiment 62",
-            "Experiment 63",
-            "Experiment 64",
-            "Experiment 65",
-            "Experiment 66",
-            "Experiment 67",
-            "Experiment 68",
-            "Experiment 69",
-            "Experiment 70",
-            "Experiment 71",
-            "Experiment 72"});
-            this.comboBox1.Location = new System.Drawing.Point(35, 54);
+            resources.GetString("comboBox1.Items"),
+            resources.GetString("comboBox1.Items1"),
+            resources.GetString("comboBox1.Items2"),
+            resources.GetString("comboBox1.Items3"),
+            resources.GetString("comboBox1.Items4"),
+            resources.GetString("comboBox1.Items5"),
+            resources.GetString("comboBox1.Items6"),
+            resources.GetString("comboBox1.Items7"),
+            resources.GetString("comboBox1.Items8"),
+            resources.GetString("comboBox1.Items9"),
+            resources.GetString("comboBox1.Items10"),
+            resources.GetString("comboBox1.Items11"),
+            resources.GetString("comboBox1.Items12"),
+            resources.GetString("comboBox1.Items13"),
+            resources.GetString("comboBox1.Items14"),
+            resources.GetString("comboBox1.Items15"),
+            resources.GetString("comboBox1.Items16"),
+            resources.GetString("comboBox1.Items17"),
+            resources.GetString("comboBox1.Items18"),
+            resources.GetString("comboBox1.Items19"),
+            resources.GetString("comboBox1.Items20"),
+            resources.GetString("comboBox1.Items21"),
+            resources.GetString("comboBox1.Items22"),
+            resources.GetString("comboBox1.Items23"),
+            resources.GetString("comboBox1.Items24"),
+            resources.GetString("comboBox1.Items25"),
+            resources.GetString("comboBox1.Items26"),
+            resources.GetString("comboBox1.Items27"),
+            resources.GetString("comboBox1.Items28"),
+            resources.GetString("comboBox1.Items29"),
+            resources.GetString("comboBox1.Items30"),
+            resources.GetString("comboBox1.Items31"),
+            resources.GetString("comboBox1.Items32"),
+            resources.GetString("comboBox1.Items33"),
+            resources.GetString("comboBox1.Items34"),
+            resources.GetString("comboBox1.Items35"),
+            resources.GetString("comboBox1.Items36"),
+            resources.GetString("comboBox1.Items37"),
+            resources.GetString("comboBox1.Items38"),
+            resources.GetString("comboBox1.Items39"),
+            resources.GetString("comboBox1.Items40"),
+            resources.GetString("comboBox1.Items41"),
+            resources.GetString("comboBox1.Items42"),
+            resources.GetString("comboBox1.Items43"),
+            resources.GetString("comboBox1.Items44"),
+            resources.GetString("comboBox1.Items45"),
+            resources.GetString("comboBox1.Items46"),
+            resources.GetString("comboBox1.Items47"),
+            resources.GetString("comboBox1.Items48"),
+            resources.GetString("comboBox1.Items49"),
+            resources.GetString("comboBox1.Items50"),
+            resources.GetString("comboBox1.Items51"),
+            resources.GetString("comboBox1.Items52"),
+            resources.GetString("comboBox1.Items53"),
+            resources.GetString("comboBox1.Items54"),
+            resources.GetString("comboBox1.Items55"),
+            resources.GetString("comboBox1.Items56"),
+            resources.GetString("comboBox1.Items57"),
+            resources.GetString("comboBox1.Items58"),
+            resources.GetString("comboBox1.Items59"),
+            resources.GetString("comboBox1.Items60"),
+            resources.GetString("comboBox1.Items61"),
+            resources.GetString("comboBox1.Items62"),
+            resources.GetString("comboBox1.Items63"),
+            resources.GetString("comboBox1.Items64"),
+            resources.GetString("comboBox1.Items65"),
+            resources.GetString("comboBox1.Items66"),
+            resources.GetString("comboBox1.Items67"),
+            resources.GetString("comboBox1.Items68"),
+            resources.GetString("comboBox1.Items69"),
+            resources.GetString("comboBox1.Items70"),
+            resources.GetString("comboBox1.Items71"),
+            resources.GetString("comboBox1.Items72")});
+            resources.ApplyResources(this.comboBox1, "comboBox1");
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(216, 24);
-            this.comboBox1.TabIndex = 15;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.label12);
             this.groupBox5.Controls.Add(this.comboBox1);
-            this.groupBox5.Location = new System.Drawing.Point(12, 12);
+            resources.ApplyResources(this.groupBox5, "groupBox5");
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(280, 100);
-            this.groupBox5.TabIndex = 16;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Experiments";
             // 
             // label12
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(82, 29);
+            resources.ApplyResources(this.label12, "label12");
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(114, 17);
-            this.label12.TabIndex = 19;
-            this.label12.Text = "Time Remaining:";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(315, 280);
+            resources.ApplyResources(this.button1, "button1");
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "START";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(424, 280);
+            resources.ApplyResources(this.button2, "button2");
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "STOP";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -551,17 +442,43 @@
             // 
             // timer2
             // 
+            this.timer2.Interval = 1000;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
-            // serialPort1
+            // groupBox6
             // 
-            this.serialPort1.PortName = "COM7";
+            this.groupBox6.Controls.Add(this.label13);
+            this.groupBox6.Controls.Add(this.button3);
+            this.groupBox6.Controls.Add(this.comboBox2);
+            resources.ApplyResources(this.groupBox6, "groupBox6");
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.TabStop = false;
+            // 
+            // label13
+            // 
+            resources.ApplyResources(this.label13, "label13");
+            this.label13.Name = "label13";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
+            // 
+            // button3
+            // 
+            resources.ApplyResources(this.button3, "button3");
+            this.button3.Name = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            resources.ApplyResources(this.comboBox2, "comboBox2");
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(537, 337);
+            this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox5);
@@ -569,8 +486,8 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Name = "Form1";
-            this.Text = "Arduino Controller";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -582,6 +499,8 @@
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -692,6 +611,10 @@
         private System.Windows.Forms.Timer timer70;
         private System.Windows.Forms.Timer timer71;
         private System.Windows.Forms.Timer timer72;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ComboBox comboBox2;
     }
 }
 

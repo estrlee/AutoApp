@@ -20,15 +20,47 @@ namespace AutoApp
         private int totalSeconds;
         private int seconds;
 
-
+        bool connected = false;
+        SerialPort sp;
 
         public Form1()
         {
+
             InitializeComponent();
-            
-            serialPort1.Open();
+            var ports = SerialPort.GetPortNames();
+            comboBox2.DataSource = ports;
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                sp = new SerialPort(comboBox2.SelectedItem.ToString(), 9600);
+
+                if (!connected)
+                {
+                    sp.Open();
+                    connected = true;
+                    MessageBox.Show("Serial port connected");
+                }
+                else
+                {
+                    sp.Close();
+                    sp.Dispose();
+
+                    connected = false;
+
+                    MessageBox.Show("Serial port disconnected");
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Serial port cannot connect");
+            }
+        }
+
+        
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -43,38 +75,76 @@ namespace AutoApp
         private void button2_Click(object sender, EventArgs e)
         {
             this.timer1.Enabled = false;    //ADD ALL TIMERS
+            this.timer2.Enabled = false;
+            this.timer3.Enabled = false;
+            this.timer4.Enabled = false;
+            this.timer5.Enabled = false;
+            this.timer6.Enabled = false;
+            this.timer7.Enabled = false;
+            this.timer8.Enabled = false;
+            this.timer9.Enabled = false;
+            this.timer10.Enabled = false;
+            this.timer11.Enabled = false;
+            this.timer12.Enabled = false;
+            this.timer13.Enabled = false;
+            this.timer14.Enabled = false;
+            this.timer15.Enabled = false;
+            this.timer16.Enabled = false;
+            this.timer17.Enabled = false;
+            this.timer18.Enabled = false;
+            this.timer19.Enabled = false;
+            this.timer20.Enabled = false;
+            this.timer21.Enabled = false;
+            this.timer22.Enabled = false;
+            this.timer23.Enabled = false;
+            this.timer24.Enabled = false;
+            this.timer25.Enabled = false;
+            this.timer26.Enabled = false;
+            this.timer27.Enabled = false;
+            this.timer28.Enabled = false;
+            this.timer29.Enabled = false;
+            this.timer30.Enabled = false;
+            this.timer31.Enabled = false;
+            this.timer32.Enabled = false;
+            this.timer33.Enabled = false;
+            this.timer34.Enabled = false;
+            this.timer35.Enabled = false;
+            this.timer36.Enabled = false;
+            this.timer37.Enabled = false;
+            this.timer38.Enabled = false;
+            this.timer39.Enabled = false;
 
-            serialPort1.Write("a");     
+            sp.Write("a");     
             checkBox7.Checked = false;
 
-            serialPort1.Write("b");
+            sp.Write("b");
             checkBox8.Checked = false;
 
-            serialPort1.Write("c");
+            sp.Write("c");
             checkBox11.Checked = false;
 
-            serialPort1.Write("d");
+            sp.Write("d");
             checkBox10.Checked = false;
 
-            serialPort1.Write("e");
+            sp.Write("e");
             checkBox1.Checked = false;
 
-            serialPort1.Write("f");
+            sp.Write("f");
             checkBox2.Checked = false;
 
-            serialPort1.Write("g");
+            sp.Write("g");
             checkBox3.Checked = false;
 
-            serialPort1.Write("h");
+            sp.Write("h");
             checkBox4.Checked = false;
 
-            serialPort1.Write("i");
+            sp.Write("i");
             checkBox5.Checked = false;
 
-            serialPort1.Write("j");
+            sp.Write("j");
             checkBox6.Checked = false;
 
-            serialPort1.Write("m");
+            sp.Write("m");
             checkBox9.Checked = false;
 
             MessageBox.Show("Experiment stopped");
@@ -133,12 +203,12 @@ namespace AutoApp
                                                                 // totalSeconds < (total seconds - desired seconds(amount of seconds you want the valve to turn on after)
                                                                 // total seconds > (total seconds - desired seconds(amount of seconds you want the valve to turn off after)
                 {
-                    serialPort1.Write("E");
+                    sp.Write("E");
                     checkBox1.Checked = true;
                 }
                 else
                 {
-                    serialPort1.Write("e");     //valve will close after 10s
+                    sp.Write("e");     //valve will close after 10s
                     checkBox1.Checked = false;
                 }
 
@@ -146,18 +216,18 @@ namespace AutoApp
 
                 //EVENT 2
                 //turns VFD on
-                if (totalSeconds <= 58 & totalSeconds > 51)    //valve will turn on after 5s and turn off after 15s
+                if (totalSeconds <= 58 & totalSeconds > 51 || totalSeconds <= 47 & totalSeconds > 46)    //valve will turn on after 5s and turn off after 15s
                                                                //based on total mintues(of entire experiment) convert to seconds, subtract desired seconds from total
                                                                // totalSeconds < (total seconds - desired seconds(amount of seconds you want the valve to turn on after)
                                                                // total seconds > (total seconds - desired seconds(amount of seconds you want the valve to turn off after)
                 {
-                    serialPort1.Write("A");     //pin number
+                    sp.Write("A");     //pin number
                     checkBox7.Checked = true;   //corresponding pin number label
                 }
                 else //closes valve after seconds have passed
 
                 {
-                    serialPort1.Write("a");
+                    sp.Write("a");
                     checkBox7.Checked = false;
                 }
 
@@ -170,12 +240,12 @@ namespace AutoApp
                                                                // totalSeconds < (total seconds - desired seconds(amount of seconds you want the valve to turn on after)
                                                                // total seconds > (total seconds - desired seconds(amount of seconds you want the valve to turn off after)
                 {
-                    serialPort1.Write("F");
+                    sp.Write("F");
                     checkBox2.Checked = true;
                 }
                 else
                 {
-                    serialPort1.Write("f");     //valve will close after 10s
+                    sp.Write("f");     //valve will close after 10s
                     checkBox2.Checked = false;
                 }
 
@@ -189,12 +259,12 @@ namespace AutoApp
                                                                                // totalSeconds < (total seconds - desired seconds(amount of seconds you want the valve to turn on after)
                                                                                // total seconds > (total seconds - desired seconds(amount of seconds you want the valve to turn off after)
                 {
-                    serialPort1.Write("G");      //change pin letter
+                    sp.Write("G");      //change pin letter
                     checkBox3.Checked = true;
                 }
                 else
                 {
-                    serialPort1.Write("g");     //change pin letter
+                    sp.Write("g");     //change pin letter
                     checkBox3.Checked = false;
                 }
 
@@ -213,12 +283,12 @@ namespace AutoApp
                                                                                // totalSeconds < (total seconds - desired seconds(amount of seconds you want the valve to turn on after)
                                                                                // total seconds > (total seconds - desired seconds(amount of seconds you want the valve to turn off after)
                 {
-                    serialPort1.Write("M");      //change pin letter
+                    sp.Write("M");      //change pin letter
                     checkBox9.Checked = true;
                 }
                 else
                 {
-                    serialPort1.Write("m");     //change pin letter
+                    sp.Write("m");     //change pin letter
                     checkBox9.Checked = false;
                 }
 
@@ -232,13 +302,13 @@ namespace AutoApp
                                                                                // totalSeconds < (total seconds - desired seconds(amount of seconds you want the valve to turn on after)
                                                                                // total seconds > (total seconds - desired seconds(amount of seconds you want the valve to turn off after)
                 {
-                    serialPort1.Write("B");      //change pin letter
-                    checkBox7.Checked = true;
+                    sp.Write("B");      //change pin letter
+                    checkBox8.Checked = true;
                 }
                 else
                 {
-                    serialPort1.Write("b");     //change pin letter
-                    checkBox7.Checked = false;
+                    sp.Write("b");     //change pin letter
+                    checkBox8.Checked = false;
                 }
 
 
@@ -269,12 +339,12 @@ namespace AutoApp
                                                                                // totalSeconds < (total seconds - desired seconds(amount of seconds you want the valve to turn on after)
                                                                                // total seconds > (total seconds - desired seconds(amount of seconds you want the valve to turn off after)
                 {
-                    serialPort1.Write("H");      //change pin letter
+                    sp.Write("H");      //change pin letter
                     checkBox4.Checked = true;
                 }
                 else
                 {
-                    serialPort1.Write("h");     //change pin letter
+                    sp.Write("h");     //change pin letter
                     checkBox4.Checked = false;
                 }
 
@@ -290,12 +360,12 @@ namespace AutoApp
                                                                                // totalSeconds < (total seconds - desired seconds(amount of seconds you want the valve to turn on after)
                                                                                // total seconds > (total seconds - desired seconds(amount of seconds you want the valve to turn off after)
                 {
-                    serialPort1.Write("D");      //change pin letter
+                    sp.Write("D");      //change pin letter
                     checkBox10.Checked = true;
                 }
                 else
                 {
-                    serialPort1.Write("d");     //change pin letter
+                    sp.Write("d");     //change pin letter
                     checkBox10.Checked = false;
                 }
 
@@ -310,12 +380,12 @@ namespace AutoApp
                                                                                // totalSeconds < (total seconds - desired seconds(amount of seconds you want the valve to turn on after)
                                                                                // total seconds > (total seconds - desired seconds(amount of seconds you want the valve to turn off after)
                 {
-                    serialPort1.Write("C");      //change pin letter
+                    sp.Write("C");      //change pin letter
                     checkBox11.Checked = true;
                 }
                 else
                 {
-                    serialPort1.Write("c");     //change pin letter
+                    sp.Write("c");     //change pin letter
                     checkBox11.Checked = false;
                 }
 
@@ -330,12 +400,12 @@ namespace AutoApp
                                                                                // totalSeconds < (total seconds - desired seconds(amount of seconds you want the valve to turn on after)
                                                                                // total seconds > (total seconds - desired seconds(amount of seconds you want the valve to turn off after)
                 {
-                    serialPort1.Write("I");      //change pin letter
+                    sp.Write("I");      //change pin letter
                     checkBox5.Checked = true;
                 }
                 else
                 {
-                    serialPort1.Write("i");     //change pin letter
+                    sp.Write("i");     //change pin letter
                     checkBox5.Checked = false;
                 }
 
@@ -346,19 +416,19 @@ namespace AutoApp
 
                 //EVENT 18 = 17
                 //TURNING ON VFD
-                if (totalSeconds <= 47 & totalSeconds > 46)    //valve will turn on after 5s and turn off after 15s
+                /*if (totalSeconds <= 47 & totalSeconds > 46)    //valve will turn on after 5s and turn off after 15s
                                                                                //based on total mintues(of entire experiment) convert to seconds, subtract desired seconds from total
                                                                                // totalSeconds < (total seconds - desired seconds(amount of seconds you want the valve to turn on after)
                                                                                // total seconds > (total seconds - desired seconds(amount of seconds you want the valve to turn off after)
                 {
-                    serialPort1.Write("A");      //change pin letter
+                    sp.Write("A");      //change pin letter
                     checkBox7.Checked = true;
                 }
                 else
                 {
-                    serialPort1.Write("a");     //change pin letter
+                    sp.Write("a");     //change pin letter
                     checkBox7.Checked = false;
-                }
+                }*/
 
 
 
@@ -371,12 +441,12 @@ namespace AutoApp
                                                                                // totalSeconds < (total seconds - desired seconds(amount of seconds you want the valve to turn on after)
                                                                                // total seconds > (total seconds - desired seconds(amount of seconds you want the valve to turn off after)
                 {
-                    serialPort1.Write("J");      //change pin letter
+                    sp.Write("J");      //change pin letter
                     checkBox6.Checked = true;
                 }
                 else
                 {
-                    serialPort1.Write("j");     //change pin letter
+                    sp.Write("j");     //change pin letter
                     checkBox6.Checked = false;
                 }
 
@@ -402,14 +472,284 @@ namespace AutoApp
 
         private void timer2_Tick(object sender, EventArgs e)    //timer for experiment 2
         {
+            if (totalSeconds > 0)
+            {
+                //list all events
 
+
+
+                //EVENT 1
+                //opens mix to motor
+                if (totalSeconds <= 59 & totalSeconds > 56)    //valve will turn on after 5s and turn off after 15s
+                                                               //based on total mintues(of entire experiment) convert to seconds, subtract desired seconds from total
+                                                               // totalSeconds < (total seconds - desired seconds(amount of seconds you want the valve to turn on after)
+                                                               // total seconds > (total seconds - desired seconds(amount of seconds you want the valve to turn off after)
+                {
+                    sp.Write("E");
+                    checkBox1.Checked = true;
+                }
+                else
+                {
+                    sp.Write("e");     //valve will close after 10s
+                    checkBox1.Checked = false;
+                }
+
+
+
+                //EVENT 2
+                //turns VFD on
+                if (totalSeconds <= 58 & totalSeconds > 51 || totalSeconds <= 47 & totalSeconds > 46)    //valve will turn on after 5s and turn off after 15s
+                                                                                                         //based on total mintues(of entire experiment) convert to seconds, subtract desired seconds from total
+                                                                                                         // totalSeconds < (total seconds - desired seconds(amount of seconds you want the valve to turn on after)
+                                                                                                         // total seconds > (total seconds - desired seconds(amount of seconds you want the valve to turn off after)
+                {
+                    sp.Write("A");     //pin number
+                    checkBox7.Checked = true;   //corresponding pin number label
+                }
+                else //closes valve after seconds have passed
+
+                {
+                    sp.Write("a");
+                    checkBox7.Checked = false;
+                }
+
+
+
+                //EVENT 3 = EVENT 2
+                //turns on motor to cleaning
+                if (totalSeconds <= 58 & totalSeconds > 53)    //valve will turn on after 5s and turn off after 15s
+                                                               //based on total mintues(of entire experiment) convert to seconds, subtract desired seconds from total
+                                                               // totalSeconds < (total seconds - desired seconds(amount of seconds you want the valve to turn on after)
+                                                               // total seconds > (total seconds - desired seconds(amount of seconds you want the valve to turn off after)
+                {
+                    sp.Write("F");
+                    checkBox2.Checked = true;
+                }
+                else
+                {
+                    sp.Write("f");     //valve will close after 10s
+                    checkBox2.Checked = false;
+                }
+
+
+
+
+                //EVENT 4
+                //Opens valve from cleaning to motor
+                if (totalSeconds <= 57 & totalSeconds > 52)    //valve will turn on after 5s and turn off after 15s
+                                                               //based on total mintues(of entire experiment) convert to seconds, subtract desired seconds from total
+                                                               // totalSeconds < (total seconds - desired seconds(amount of seconds you want the valve to turn on after)
+                                                               // total seconds > (total seconds - desired seconds(amount of seconds you want the valve to turn off after)
+                {
+                    sp.Write("G");      //change pin letter
+                    checkBox3.Checked = true;
+                }
+                else
+                {
+                    sp.Write("g");     //change pin letter
+                    checkBox3.Checked = false;
+                }
+
+
+
+
+                //EVENT 5
+                //closing valve from mixing to motor
+
+
+
+                //EVENT 6
+                //turning on immersion heater
+                if (totalSeconds <= 55 & totalSeconds > 54)    //valve will turn on after 5s and turn off after 15s
+                                                               //based on total mintues(of entire experiment) convert to seconds, subtract desired seconds from total
+                                                               // totalSeconds < (total seconds - desired seconds(amount of seconds you want the valve to turn on after)
+                                                               // total seconds > (total seconds - desired seconds(amount of seconds you want the valve to turn off after)
+                {
+                    sp.Write("M");      //change pin letter
+                    checkBox9.Checked = true;
+                }
+                else
+                {
+                    sp.Write("m");     //change pin letter
+                    checkBox9.Checked = false;
+                }
+
+
+
+
+                //EVENT 7 = EVENT 6
+                //TURNING ON ULTRASONIC
+                if (totalSeconds <= 55 & totalSeconds > 54)    //valve will turn on after 5s and turn off after 15s
+                                                               //based on total mintues(of entire experiment) convert to seconds, subtract desired seconds from total
+                                                               // totalSeconds < (total seconds - desired seconds(amount of seconds you want the valve to turn on after)
+                                                               // total seconds > (total seconds - desired seconds(amount of seconds you want the valve to turn off after)
+                {
+                    sp.Write("B");      //change pin letter
+                    checkBox8.Checked = true;
+                }
+                else
+                {
+                    sp.Write("b");     //change pin letter
+                    checkBox8.Checked = false;
+                }
+
+
+
+
+                //EVENT 8
+                //TURNING OFF IMMERSION HEATER
+
+
+
+
+                //EVENT 9 = 8
+                //TURNING OFF ULTRASONIC
+
+
+
+
+                //EVENT 10
+                //CLOSING MOTOR TO CLEANING VALVE
+
+
+
+
+                //EVENT 11 = EVENT 10
+                //OPENING MOTOR TO RECOVERY VALVE
+                if (totalSeconds <= 53 & totalSeconds > 50)    //valve will turn on after 5s and turn off after 15s
+                                                               //based on total mintues(of entire experiment) convert to seconds, subtract desired seconds from total
+                                                               // totalSeconds < (total seconds - desired seconds(amount of seconds you want the valve to turn on after)
+                                                               // total seconds > (total seconds - desired seconds(amount of seconds you want the valve to turn off after)
+                {
+                    sp.Write("H");      //change pin letter
+                    checkBox4.Checked = true;
+                }
+                else
+                {
+                    sp.Write("h");     //change pin letter
+                    checkBox4.Checked = false;
+                }
+
+
+
+
+
+
+                //EVENT 15a
+                //TURNING ON OZONE
+                if (totalSeconds <= 49 & totalSeconds > 48)    //valve will turn on after 5s and turn off after 15s
+                                                               //based on total mintues(of entire experiment) convert to seconds, subtract desired seconds from total
+                                                               // totalSeconds < (total seconds - desired seconds(amount of seconds you want the valve to turn on after)
+                                                               // total seconds > (total seconds - desired seconds(amount of seconds you want the valve to turn off after)
+                {
+                    sp.Write("D");      //change pin letter
+                    checkBox10.Checked = true;
+                }
+                else
+                {
+                    sp.Write("d");     //change pin letter
+                    checkBox10.Checked = false;
+                }
+
+
+
+
+
+                //EVENT 15b
+                //TURNING ON UV
+                if (totalSeconds <= 49 & totalSeconds > 48)    //valve will turn on after 5s and turn off after 15s
+                                                               //based on total mintues(of entire experiment) convert to seconds, subtract desired seconds from total
+                                                               // totalSeconds < (total seconds - desired seconds(amount of seconds you want the valve to turn on after)
+                                                               // total seconds > (total seconds - desired seconds(amount of seconds you want the valve to turn off after)
+                {
+                    sp.Write("C");      //change pin letter
+                    checkBox11.Checked = true;
+                }
+                else
+                {
+                    sp.Write("c");     //change pin letter
+                    checkBox11.Checked = false;
+                }
+
+
+
+
+
+                //EVENT 17
+                //OPENING RECOVERY TO MOTOR VALVE
+                if (totalSeconds <= 47 & totalSeconds > 46)    //valve will turn on after 5s and turn off after 15s
+                                                               //based on total mintues(of entire experiment) convert to seconds, subtract desired seconds from total
+                                                               // totalSeconds < (total seconds - desired seconds(amount of seconds you want the valve to turn on after)
+                                                               // total seconds > (total seconds - desired seconds(amount of seconds you want the valve to turn off after)
+                {
+                    sp.Write("I");      //change pin letter
+                    checkBox5.Checked = true;
+                }
+                else
+                {
+                    sp.Write("i");     //change pin letter
+                    checkBox5.Checked = false;
+                }
+
+
+
+
+
+
+                //EVENT 18 = 17
+                //TURNING ON VFD
+                /*if (totalSeconds <= 47 & totalSeconds > 46)    //valve will turn on after 5s and turn off after 15s
+                                                                               //based on total mintues(of entire experiment) convert to seconds, subtract desired seconds from total
+                                                                               // totalSeconds < (total seconds - desired seconds(amount of seconds you want the valve to turn on after)
+                                                                               // total seconds > (total seconds - desired seconds(amount of seconds you want the valve to turn off after)
+                {
+                    sp.Write("A");      //change pin letter
+                    checkBox7.Checked = true;
+                }
+                else
+                {
+                    sp.Write("a");     //change pin letter
+                    checkBox7.Checked = false;
+                }*/
+
+
+
+
+
+                //EVENT 19 = 17
+                //OPENING MOTOR TO MIXING VALVE
+                if (totalSeconds <= 47 & totalSeconds > 46)    //valve will turn on after 5s and turn off after 15s
+                                                               //based on total mintues(of entire experiment) convert to seconds, subtract desired seconds from total
+                                                               // totalSeconds < (total seconds - desired seconds(amount of seconds you want the valve to turn on after)
+                                                               // total seconds > (total seconds - desired seconds(amount of seconds you want the valve to turn off after)
+                {
+                    sp.Write("J");      //change pin letter
+                    checkBox6.Checked = true;
+                }
+                else
+                {
+                    sp.Write("j");     //change pin letter
+                    checkBox6.Checked = false;
+                }
+
+
+
+                totalSeconds--;
+                int mintues = totalSeconds / 60;
+                int seconds = totalSeconds - (mintues * 60);
+                this.label12.Text = mintues.ToString() + ":" + seconds.ToString();
+
+            }
+
+            else
+            {
+
+
+                this.timer2.Enabled = false;    //change timer number
+                this.timer2.Stop();             //change timer number
+                MessageBox.Show("Experiment Completed!");
+            }
         }
-
-
-
-
-
-
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)   //Mixing to Motor Valve / Relay1
         {
@@ -466,8 +806,6 @@ namespace AutoApp
 
         }
 
-
-
         private void label9_Click(object sender, EventArgs e)
         {
 
@@ -477,7 +815,17 @@ namespace AutoApp
 
         }
 
-        
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }
 
