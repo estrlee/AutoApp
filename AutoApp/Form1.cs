@@ -491,6 +491,15 @@ namespace AutoApp
                     checkBox4.Checked = false;
                 }
 
+                //EVENT 12
+                //CLOSING CLEANING TO MOTOR
+
+                //EVENT 13
+                //TURNS OFF VFD
+
+                //EVENT 14
+                //CLOSING MOTOR TO RECOVERY
+
                 //EVENT 15a --> event 16
                 //TURNING ON OZONE
                 if (totalSeconds <= 49 & totalSeconds > 48)
