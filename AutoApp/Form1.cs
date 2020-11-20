@@ -76,43 +76,7 @@ namespace AutoApp
         {
             this.timer1.Enabled = false;    //ADD ALL TIMERS
             this.timer2.Enabled = false;
-            this.timer3.Enabled = false;
-            this.timer4.Enabled = false;
-            this.timer5.Enabled = false;
-            this.timer6.Enabled = false;
-            this.timer7.Enabled = false;
-            this.timer8.Enabled = false;
-            this.timer9.Enabled = false;
-            this.timer10.Enabled = false;
-            this.timer11.Enabled = false;
-            this.timer12.Enabled = false;
-            this.timer13.Enabled = false;
-            this.timer14.Enabled = false;
-            this.timer15.Enabled = false;
-            this.timer16.Enabled = false;
-            this.timer17.Enabled = false;
-            this.timer18.Enabled = false;
-            this.timer19.Enabled = false;
-            this.timer20.Enabled = false;
-            this.timer21.Enabled = false;
-            this.timer22.Enabled = false;
-            this.timer23.Enabled = false;
-            this.timer24.Enabled = false;
-            this.timer25.Enabled = false;
-            this.timer26.Enabled = false;
-            this.timer27.Enabled = false;
-            this.timer28.Enabled = false;
-            this.timer29.Enabled = false;
-            this.timer30.Enabled = false;
-            this.timer31.Enabled = false;
-            this.timer32.Enabled = false;
-            this.timer33.Enabled = false;
-            this.timer34.Enabled = false;
-            this.timer35.Enabled = false;
-            this.timer36.Enabled = false;
-            this.timer37.Enabled = false;
-            this.timer38.Enabled = false;
-            this.timer39.Enabled = false;
+            
 
             sp.Write("a");     
             checkBox7.Checked = false;
@@ -180,20 +144,6 @@ namespace AutoApp
                 this.timer2.Enabled = false;
             }
 
-            //Experiment 3 drop down
-            if (comboBox1.SelectedIndex == 3)    //change selected index number
-
-            {
-                int minutes = 1;                //change amount of minutues
-                seconds = (minutes / 60);
-                totalSeconds = (minutes * 60) + seconds;
-                this.timer3.Enabled = true;     //change timer number
-            }
-            else
-            {
-                this.timer3.Enabled = false;    //change timer number
-            }
-
         }
 
         private void timer1_Tick(object sender, EventArgs e)    //timer for expirement 1
@@ -222,6 +172,7 @@ namespace AutoApp
                 {
                     sp.Write("A");
                     checkBox7.Checked = true;
+                    /*MessageBox.Show("Experiment stopped");*/
                 }
                 else
 
